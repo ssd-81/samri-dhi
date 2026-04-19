@@ -352,6 +352,16 @@ function formatLakhs(amount) {
 }
 
 function showView(viewId) {
+    if (viewId === 'scoreReveal') {
+        resetScoreReveal();
+    } else if (viewId === 'formWizard') {
+        resetFormWizard();
+    } else if (viewId === 'profile') {
+        resetProfilePage();
+    } else if (viewId === 'loading') {
+        resetLoading();
+    }
+    
     document.querySelectorAll('.view').forEach(v => {
         v.classList.add('hidden');
         v.classList.remove('active');
@@ -359,6 +369,88 @@ function showView(viewId) {
     const view = document.getElementById(viewId);
     view.classList.remove('hidden');
     view.classList.add('active');
+    
+    window.scrollTo(0, 0);
+    
+    if (viewId === 'landing') {
+        renderPersonas();
+    }
+}
+
+function resetScoreReveal() {
+    document.getElementById('scoreNumber').textContent = '0';
+    document.getElementById('scoreBand').textContent = '--';
+    document.getElementById('cibilEquiv').textContent = '--';
+    document.getElementById('peerPercentile').textContent = '--';
+    document.getElementById('currentScore').textContent = '--';
+    document.getElementById('currentBand').textContent = '--';
+    document.getElementById('projectedScore').textContent = '--';
+    document.getElementById('scoreTitle').textContent = '';
+    
+    const dialProgress = document.querySelector('.dial-progress');
+    if (dialProgress) dialProgress.style.strokeDashoffset = 565.48;
+    
+    const progressFill = document.getElementById('progressFill');
+    if (progressFill) progressFill.style.width = '0';
+    
+    const potentialMarker = document.getElementById('potentialMarker');
+    if (potentialMarker) potentialMarker.style.left = '0';
+    
+    const componentsList = document.getElementById('componentsList');
+    if (componentsList) componentsList.innerHTML = '';
+    
+    const patternCard = document.getElementById('patternCard');
+    if (patternCard) patternCard.innerHTML = '';
+    
+    const productsGrid = document.getElementById('productsGrid');
+    if (productsGrid) productsGrid.innerHTML = '';
+    
+    const improvementsList = document.getElementById('improvementsList');
+    if (improvementsList) improvementsList.innerHTML = '';
+    
+    if (radarChart) { 
+        radarChart.destroy(); 
+        radarChart = null; 
+    }
+    if (timelineChart) { 
+        timelineChart.destroy(); 
+        timelineChart = null; 
+    }
+    
+    document.querySelectorAll('.scroll-reveal').forEach(el => el.classList.remove('visible'));
+}
+
+function resetProfilePage() {
+    document.getElementById('profileAvatar').innerHTML = '';
+    document.getElementById('profileName').textContent = '';
+    document.getElementById('profileMeta').textContent = '';
+    document.getElementById('profileStats').innerHTML = '';
+    document.getElementById('profileStory').innerHTML = '';
+    const btn = document.querySelector('.btn-analyze');
+    if (btn) {
+        btn.textContent = 'Analyze Her FD History';
+        btn.disabled = false;
+    }
+}
+
+function resetLoading() {
+    const stepsContainer = document.getElementById('loadingSteps');
+    if (stepsContainer) stepsContainer.innerHTML = '';
+    const loadingYears = document.getElementById('loadingYears');
+    if (loadingYears) loadingYears.textContent = '';
+}
+
+function resetFormWizard() {
+    document.getElementById('inputName').value = '';
+    document.getElementById('inputAge').value = '';
+    document.getElementById('inputCity').value = '';
+    customDeposits = [];
+    wizardStep = 1;
+    document.querySelectorAll('.wizard-step-content').forEach(el => el.classList.add('hidden'));
+    document.getElementById('step1').classList.remove('hidden');
+    document.getElementById('wizardStep').textContent = 'Step 1 of 3';
+    document.getElementById('wizardProgressFill').style.width = '33%';
+    document.getElementById('depositsList').innerHTML = '';
 }
 
 function scrollToSection(sectionId) {

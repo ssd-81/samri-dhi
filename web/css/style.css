@@ -1581,6 +1581,75 @@ body::before {
     margin-bottom: 24px;
 }
 
+/* New Flywheel Design */
+.flywheel-new {
+    padding: 40px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.fw-cycle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.fw-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 20px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    min-width: 100px;
+    position: relative;
+}
+
+.fw-num {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    width: 24px;
+    height: 24px;
+    background: var(--accent-gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: white;
+}
+
+.fw-node .fw-icon {
+    font-size: 32px;
+}
+
+.fw-node .fw-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.fw-arrow {
+    font-size: 24px;
+    color: var(--accent-primary);
+}
+
+.fw-desc {
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 24px;
+    font-style: italic;
+}
+
 @media (max-width: 768px) {
     .about-hero {
         flex-direction: column;
@@ -1598,12 +1667,20 @@ body::before {
         grid-template-columns: 1fr;
     }
     
-    .flywheel-visual {
-        padding: 40px 20px;
+    .fw-cycle {
+        gap: 8px;
     }
     
-    .flywheel-ring {
-        width: 200px;
-        height: 200px;
+    .fw-node {
+        min-width: 80px;
+        padding: 16px;
+    }
+    
+    .fw-node .fw-icon {
+        font-size: 24px;
+    }
+    
+    .fw-arrow {
+        font-size: 18px;
     }
 }

@@ -1,5 +1,3 @@
-let radarChart = null;
-
 function renderRadarChart(components) {
     const ctx = document.getElementById('radarChart').getContext('2d');
     

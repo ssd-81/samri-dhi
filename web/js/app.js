@@ -15,6 +15,8 @@ const avatars = [
     '<svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="38" fill="#d4a574"/><circle cx="40" cy="34" r="18" fill="#8b7355"/><path d="M22 62 Q40 75 58 62" fill="#8b7355"/><circle cx="32" cy="40" r="2" fill="#8b7355"/><circle cx="48" cy="40" r="2" fill="#8b7355"/><path d="M35 46 Q40 49 45 46" fill="none" stroke="#8b7355" stroke-width="1.5"/></svg>'
 ];
 
+const API_BASE = window.location.hostname === 'localhost' ? '' : 'https://samri-dhi.fly.dev';
+
 const personaTaglines = {
     priya: "9 years of perfect saving. Zero credit history.",
     vikram: "8 banks, rate-optimized, aggressive saver.",
@@ -66,7 +68,7 @@ async function init() {
 
 async function loadPersonas() {
     try {
-        const response = await fetch('/api/personas');
+        const response = await fetch(`${API_BASE}/api/personas`);
         personas = await response.json();
         renderPersonas();
     } catch (error) {
@@ -171,7 +173,7 @@ async function analyzePersona() {
     await new Promise(r => setTimeout(r, 500));
 
     try {
-        const response = await fetch(`/api/personas/${currentPersonaId}/score`);
+        const response = await fetch(`${API_BASE}/api/personas/${currentPersonaId}/score`);
         currentScore = await response.json();
         showScoreReveal();
     } catch (error) {
@@ -596,7 +598,7 @@ async function calculateCustomScore() {
     };
 
     try {
-        const response = await fetch('/api/score', {
+        const response = await fetch(`${API_BASE}/api/score`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(history)

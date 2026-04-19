@@ -108,6 +108,7 @@ body::before {
 
 .main {
     padding: 48px 0;
+    position: relative;
 }
 
 .view {
@@ -120,6 +121,7 @@ body::before {
     opacity: 0;
     transform: translateY(20px);
     pointer-events: none;
+    visibility: hidden;
     position: absolute;
     width: 100%;
     top: 0;

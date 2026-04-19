@@ -49,6 +49,36 @@
                     <button class="btn btn-ghost" onclick="scrollToSection('personas')">See how it works ↓</button>
                 </div>
 
+                <!-- How It Works Dropdown -->
+                <div class="how-it-works">
+                    <button class="hw-toggle" onclick="toggleHowItWorks()">
+                        <span>How It Works</span>
+                        <span class="hw-arrow">▼</span>
+                    </button>
+                    <div class="hw-content hidden" id="hwContent">
+                        <div class="hw-diagram">
+                            <div class="hw-step">
+                                <div class="hw-icon">📥</div>
+                                <div class="hw-label">Input FD History</div>
+                                <div class="hw-desc">Bank, amount, tenure, dates</div>
+                            </div>
+                            <div class="hw-arrow-step">→</div>
+                            <div class="hw-step">
+                                <div class="hw-icon">⚙️</div>
+                                <div class="hw-label">5 Dimensions</div>
+                                <div class="hw-desc">Consistency, Discipline, Growth, Diversification, Intelligence</div>
+                            </div>
+                            <div class="hw-arrow-step">→</div>
+                            <div class="hw-step">
+                                <div class="hw-icon">📊</div>
+                                <div class="hw-label">Score Output</div>
+                                <div class="hw-desc">300-900 score + CIBIL equivalent + recommendations</div>
+                            </div>
+                        </div>
+                        <p class="hw-note">Traditional credit = what you owe. Samridhi = what you save.</p>
+                    </div>
+                </div>
+
                 <div class="section-label" id="personas">Meet the savers traditional credit can't see</div>
 
                 <div class="personas-grid" id="personasGrid"></div>

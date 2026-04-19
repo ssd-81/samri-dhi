@@ -463,6 +463,13 @@ function scrollToSection(sectionId) {
     document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
 }
 
+function toggleHowItWorks() {
+    const content = document.getElementById('hwContent');
+    const arrow = document.querySelector('.hw-arrow');
+    content.classList.toggle('hidden');
+    arrow.classList.toggle('rotated');
+}
+
 function resetAndGoToStep1() {
     resetFormWizard();
     showView('formWizard');

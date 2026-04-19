@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FD Credit Score</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">◈</span>
+                <span class="logo-text">FD Credit Score</span>
+            </div>
+        </header>
+
+        <main class="main">
+            <section id="landing" class="view active">
+                <div class="hero">
+                    <h1 class="hero-title">Your Fixed Deposit <span class="highlight">Credit Score</span></h1>
+                    <p class="hero-subtitle">Discover your creditworthiness based on your FD journey</p>
+                </div>
+
+                <div class="personas-grid" id="personasGrid">
+                </div>
+
+                <div class="custom-input">
+                    <button class="btn btn-secondary" onclick="showCustomInput()">
+                        <span>+</span> Custom Input
+                    </button>
+                </div>
+            </section>
+
+            <section id="customInput" class="view hidden">
+                <div class="form-container">
+                    <h2>Enter Your FD Details</h2>
+                    <form id="customForm">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" id="inputName" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Age</label>
+                            <input type="number" id="inputAge" required>
+                        </div>
+                        <div class="form-group">
+                            <label>City</label>
+                            <input type="text" id="inputCity" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Deposits (JSON)</label>
+                            <textarea id="inputDeposits" placeholder='[{"type":"FD","bank":"SBI","amount":100000,"tenure_months":12,"interest_rate":6.5,"start_date":"2024-01-01","maturity_date":"2025-01-01","status":"active"}]'></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary" onclick="showLanding()">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Calculate Score</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <section id="scoreReveal" class="view hidden">
+                <div class="score-container">
+                    <div class="score-dial-wrapper">
+                        <svg class="score-dial" viewBox="0 0 200 200">
+                            <defs>
+                                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#00d4aa"/>
+                                    <stop offset="100%" style="stop-color:#0066ff"/>
+                                </linearGradient>
+                            </defs>
+                            <circle class="dial-bg" cx="100" cy="100" r="90" />
+                            <circle class="dial-progress" cx="100" cy="100" r="90" />
+                        </svg>
+                        <div class="score-value">
+                            <span class="score-number" id="scoreNumber">0</span>
+                            <span class="score-max">/ 900</span>
+                        </div>
+                        <div class="score-band" id="scoreBand">--</div>
+                    </div>
+
+                    <div class="chart-wrapper">
+                        <canvas id="radarChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="pattern-badge" id="patternBadge">
+                    <span class="pattern-label">Pattern:</span>
+                    <span class="pattern-value" id="patternValue">--</span>
+                </div>
+
+                <div class="insights-list" id="insightsList">
+                </div>
+
+                <div class="credit-products" id="creditProducts">
+                    <h3>Credit Products</h3>
+                    <div class="products-grid" id="productsGrid">
+                    </div>
+                </div>
+
+                <div class="improvements" id="improvements">
+                    <h3>Improvement Path</h3>
+                    <div class="improvements-list" id="improvementsList">
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button class="btn btn-primary" onclick="showLanding()">Try Another Persona</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/charts.js"></script>
+</body>
+</html>

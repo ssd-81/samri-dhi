@@ -1259,3 +1259,69 @@ body::before {
         grid-template-columns: 1fr;
     }
 }
+
+/* About Page */
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.about-title {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 48px;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.about-section {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 24px;
+    backdrop-filter: blur(10px);
+}
+
+.about-section h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--accent-primary);
+}
+
+.about-section p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+}
+
+.about-section p:last-child {
+    margin-bottom: 0;
+}
+
+.about-list {
+    list-style: none;
+    padding: 0;
+}
+
+.about-list li {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    padding: 8px 0;
+    padding-left: 24px;
+    position: relative;
+}
+
+.about-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--accent-primary);
+}

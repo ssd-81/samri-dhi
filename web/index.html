@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FD Credit Score</title>
+    <title>Samridhi - Your Savings. Your Credit Identity.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -15,57 +15,102 @@
         <header class="header">
             <div class="logo">
                 <span class="logo-icon">◈</span>
-                <span class="logo-text">FD Credit Score</span>
+                <span class="logo-text">Samridhi</span>
             </div>
+            <nav class="nav">
+                <a href="#" onclick="showView('landing')">About</a>
+            </nav>
         </header>
 
         <main class="main">
+            <!-- LANDING PAGE -->
             <section id="landing" class="view active">
-                <div class="hero">
-                    <h1 class="hero-title">Your Fixed Deposit <span class="highlight">Credit Score</span></h1>
-                    <p class="hero-subtitle">Discover your creditworthiness based on your FD journey</p>
+                <div class="hero-section">
+                    <h1 class="hero-title">500 Million Indians Save Diligently.<br><span class="highlight">Zero Get Credit For It.</span></h1>
+                    <p class="hero-subtitle">Traditional credit scores only measure debt repayment. Samridhi measures what matters: savings discipline.</p>
                 </div>
 
-                <div class="personas-grid" id="personasGrid">
+                <div class="stats-bar" id="statsBar">
+                    <div class="stat-card scroll-reveal">
+                        <span class="stat-value" data-target="6600000">₹66L Cr</span>
+                        <span class="stat-label">FD Holdings in India</span>
+                    </div>
+                    <div class="stat-card scroll-reveal" style="animation-delay: 0.2s">
+                        <span class="stat-value">400-500M</span>
+                        <span class="stat-label">Credit Invisible Indians</span>
+                    </div>
+                    <div class="stat-card scroll-reveal" style="animation-delay: 0.4s">
+                        <span class="stat-value">0</span>
+                        <span class="stat-label">Credit Scores for Savers</span>
+                    </div>
                 </div>
 
-                <div class="custom-input">
-                    <button class="btn btn-secondary" onclick="showCustomInput()">
-                        <span>+</span> Custom Input
+                <div class="hero-cta">
+                    <button class="btn btn-ghost" onclick="scrollToSection('personas')">See how it works ↓</button>
+                </div>
+
+                <div class="section-label" id="personas">Meet the savers traditional credit can't see</div>
+
+                <div class="personas-grid" id="personasGrid"></div>
+
+                <div class="custom-card">
+                    <button class="custom-card-btn" onclick="showView('formWizard')">
+                        <span class="plus-icon">+</span>
+                        <span class="custom-title">Calculate Your Own Score</span>
+                    </button>
+                    <p class="custom-subtitle">Enter your FD history and discover your creditworthiness</p>
+                </div>
+
+                <footer class="footer">
+                    Built for the Blostem AI Builder Hackathon 2026
+                </footer>
+            </section>
+
+            <!-- PROFILE PAGE -->
+            <section id="profile" class="view hidden">
+                <header class="profile-header">
+                    <button class="btn-back" onclick="showView('landing')">← Back</button>
+                </header>
+
+                <div class="profile-content">
+                    <div class="profile-avatar" id="profileAvatar"></div>
+                    <h2 class="profile-name" id="profileName"></h2>
+                    <p class="profile-meta" id="profileMeta"></p>
+
+                    <div class="profile-stats" id="profileStats"></div>
+
+                    <div class="profile-story" id="profileStory"></div>
+
+                    <button class="btn btn-primary btn-analyze" onclick="analyzePersona()">
+                        ✨ Analyze Her FD History
                     </button>
                 </div>
             </section>
 
-            <section id="customInput" class="view hidden">
-                <div class="form-container">
-                    <h2>Enter Your FD Details</h2>
-                    <form id="customForm">
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" id="inputName" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Age</label>
-                            <input type="number" id="inputAge" required>
-                        </div>
-                        <div class="form-group">
-                            <label>City</label>
-                            <input type="text" id="inputCity" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Deposits (JSON)</label>
-                            <textarea id="inputDeposits" placeholder='[{"type":"FD","bank":"SBI","amount":100000,"tenure_months":12,"interest_rate":6.5,"start_date":"2024-01-01","maturity_date":"2025-01-01","status":"active"}]'></textarea>
-                        </div>
-                        <div class="form-actions">
-                            <button type="button" class="btn btn-secondary" onclick="showLanding()">Cancel</button>
-                            <button type="submit" class="btn btn-primary">Calculate Score</button>
-                        </div>
-                    </form>
+            <!-- LOADING PAGE -->
+            <section id="loading" class="view hidden">
+                <div class="loading-content">
+                    <div class="loading-spinner">
+                        <span class="spinner-dot"></span>
+                        <span class="spinner-dot"></span>
+                        <span class="spinner-dot"></span>
+                        <span class="spinner-dot"></span>
+                    </div>
+                    <h2 class="loading-title">Analyzing <span id="loadingYears"></span> years of FD history...</h2>
+                    <div class="loading-steps" id="loadingSteps"></div>
                 </div>
             </section>
 
+            <!-- SCORE REVEAL PAGE -->
             <section id="scoreReveal" class="view hidden">
-                <div class="score-container">
+                <header class="score-header">
+                    <button class="btn-back" onclick="showView('landing')">← Try Another Persona</button>
+                    <button class="btn-ghost" onclick="showView('formWizard')">Your Own Score →</button>
+                </header>
+
+                <!-- Score Hero -->
+                <div class="score-hero scroll-reveal">
+                    <h2 class="score-title" id="scoreTitle"></h2>
                     <div class="score-dial-wrapper">
                         <svg class="score-dial" viewBox="0 0 200 200">
                             <defs>
@@ -83,34 +128,212 @@
                         </div>
                         <div class="score-band" id="scoreBand">--</div>
                     </div>
+                    <div class="score-context">
+                        <div class="context-pill">
+                            <span class="context-label">CIBIL Equivalent:</span>
+                            <span class="context-value" id="cibilEquiv">--</span>
+                        </div>
+                        <div class="context-pill">
+                            <span class="context-label">Better than</span>
+                            <span class="context-value" id="peerPercentile">--</span>
+                            <span class="context-label">of savers</span>
+                        </div>
+                    </div>
+                    <div class="scroll-indicator">↓ Scroll to see your full breakdown</div>
+                </div>
 
-                    <div class="chart-wrapper">
-                        <canvas id="radarChart"></canvas>
+                <!-- Radar Chart -->
+                <div class="section-breakdown scroll-reveal">
+                    <h3 class="section-title">Score Breakdown</h3>
+                    <div class="breakdown-grid">
+                        <div class="radar-wrapper">
+                            <canvas id="radarChart"></canvas>
+                        </div>
+                        <div class="components-list" id="componentsList"></div>
                     </div>
                 </div>
 
-                <div class="pattern-badge" id="patternBadge">
-                    <span class="pattern-label">Pattern:</span>
-                    <span class="pattern-value" id="patternValue">--</span>
+                <!-- Pattern Narrative -->
+                <div class="section-pattern scroll-reveal" id="patternSection">
+                    <h3 class="section-title">Your Savings Pattern</h3>
+                    <div class="pattern-card" id="patternCard"></div>
                 </div>
 
-                <div class="insights-list" id="insightsList">
-                </div>
-
-                <div class="credit-products" id="creditProducts">
-                    <h3>Credit Products</h3>
-                    <div class="products-grid" id="productsGrid">
+                <!-- Deposit Timeline -->
+                <div class="section-timeline scroll-reveal">
+                    <h3 class="section-title">Your FD Journey</h3>
+                    <div class="timeline-chart">
+                        <canvas id="timelineChart"></canvas>
+                    </div>
+                    <div class="timeline-legend">
+                        <span class="legend-item"><span class="legend-dot matured"></span> Matured</span>
+                        <span class="legend-item"><span class="legend-dot active"></span> Active</span>
+                        <span class="legend-item"><span class="legend-dot broken"></span> Broken Early</span>
                     </div>
                 </div>
 
-                <div class="improvements" id="improvements">
-                    <h3>Improvement Path</h3>
-                    <div class="improvements-list" id="improvementsList">
+                <!-- Credit Products -->
+                <div class="section-products scroll-reveal">
+                    <h3 class="section-title">Credit Products Unlocked</h3>
+                    <div class="products-grid" id="productsGrid"></div>
+                </div>
+
+                <!-- Improvement Path -->
+                <div class="section-improvements scroll-reveal">
+                    <h3 class="section-title">Your Improvement Path</h3>
+                    <div class="improvement-bar">
+                        <span class="current-label">Current: <span id="currentScore">--</span> (<span id="currentBand">--</span>)</span>
+                        <div class="score-progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                            <div class="potential-marker" id="potentialMarker"></div>
+                        </div>
+                        <span class="potential-label">Potential: <span id="projectedScore">--</span></span>
+                    </div>
+                    <div class="improvements-list" id="improvementsList"></div>
+                </div>
+
+                <!-- Flywheel -->
+                <div class="section-flywheel scroll-reveal">
+                    <h3 class="section-title">The Samridhi Flywheel</h3>
+                    <div class="flywheel">
+                        <div class="flywheel-node">Save</div>
+                        <div class="flywheel-node">Score</div>
+                        <div class="flywheel-node">Credit</div>
+                        <div class="flywheel-node">Prosper</div>
+                        <div class="flywheel-path"></div>
+                    </div>
+                    <div class="flywheel-quote">
+                        "Every FD you create builds your credit identity. Every maturity you honor proves your discipline. Samridhi turns your savings history into your credit future."
                     </div>
                 </div>
 
-                <div class="actions">
-                    <button class="btn btn-primary" onclick="showLanding()">Try Another Persona</button>
+                <footer class="footer">
+                    Built for the Blostem AI Builder Hackathon 2026
+                </footer>
+            </section>
+
+            <!-- FORM WIZARD -->
+            <section id="formWizard" class="view hidden">
+                <div class="wizard-container">
+                    <div class="wizard-header">
+                        <button class="btn-back" onclick="showView('landing')">← Back</button>
+                        <div class="wizard-progress">
+                            <span class="wizard-step" id="wizardStep">Step 1 of 3</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="wizardProgressFill"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 1: About You -->
+                    <div class="wizard-step-content" id="step1">
+                        <h2>About You</h2>
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" id="inputName" placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label>Age</label>
+                            <input type="number" id="inputAge" placeholder="Your age">
+                        </div>
+                        <div class="form-group">
+                            <label>City</label>
+                            <input type="text" id="inputCity" placeholder="Your city">
+                        </div>
+                        <div class="wizard-actions">
+                            <button class="btn btn-primary" onclick="nextStep(2)">Next →</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Add Deposits -->
+                    <div class="wizard-step-content hidden" id="step2">
+                        <h2>Your Deposits</h2>
+                        <div class="deposit-form" id="depositForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Type</label>
+                                    <select id="depositType">
+                                        <option value="FD">Fixed Deposit</option>
+                                        <option value="RD">Recurring Deposit</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Bank</label>
+                                    <select id="depositBank">
+                                        <option value="SBI">SBI</option>
+                                        <option value="HDFC">HDFC</option>
+                                        <option value="ICICI">ICICI</option>
+                                        <option value="Axis">Axis</option>
+                                        <option value="BoB">Bank of Baroda</option>
+                                        <option value="Canara">Canara</option>
+                                        <option value="PNB">PNB</option>
+                                        <option value="IDBI">IDBI</option>
+                                        <option value="Indian">Indian Bank</option>
+                                        <option value="Kotak">Kotak</option>
+                                        <option value="IndusInd">IndusInd</option>
+                                        <option value="Yes">Yes Bank</option>
+                                        <option value="RBL">RBL</option>
+                                        <option value="Bandhan">Bandhan</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Amount (₹)</label>
+                                    <input type="number" id="depositAmount" placeholder="100000">
+                                </div>
+                                <div class="form-group">
+                                    <label>Tenure</label>
+                                    <select id="depositTenure">
+                                        <option value="3">3 months</option>
+                                        <option value="6">6 months</option>
+                                        <option value="12" selected>12 months</option>
+                                        <option value="24">24 months</option>
+                                        <option value="36">36 months</option>
+                                        <option value="60">60 months</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Interest Rate (%)</label>
+                                    <input type="number" step="0.1" id="depositRate" placeholder="6.5">
+                                </div>
+                                <div class="form-group">
+                                    <label>Start Date</label>
+                                    <input type="date" id="depositStartDate">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Status</label>
+                                <select id="depositStatus">
+                                    <option value="active">Active</option>
+                                    <option value="matured">Matured</option>
+                                    <option value="withdrawn">Withdrawn Early</option>
+                                </select>
+                            </div>
+                            <div class="form-group hidden" id="withdrawnDateGroup">
+                                <label>Withdrawn Date</label>
+                                <input type="date" id="withdrawnDate">
+                            </div>
+                            <button type="button" class="btn btn-secondary" onclick="addDeposit()">+ Add Deposit</button>
+                        </div>
+                        <div class="deposits-list" id="depositsList"></div>
+                        <div class="wizard-actions">
+                            <button class="btn btn-secondary" onclick="nextStep(1)">← Back</button>
+                            <button class="btn btn-primary" onclick="nextStep(3)" id="step2Next">Next →</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Review -->
+                    <div class="wizard-step-content hidden" id="step3">
+                        <h2>Review</h2>
+                        <div class="review-summary" id="reviewSummary"></div>
+                        <div class="wizard-actions">
+                            <button class="btn btn-secondary" onclick="nextStep(2)">← Edit</button>
+                            <button class="btn btn-primary" onclick="calculateCustomScore()">✨ Calculate Score</button>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>

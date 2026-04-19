@@ -169,7 +169,7 @@ async function analyzePersona() {
         console.error('Failed to get score:', error);
     }
 
-    btn.textContent = '✨ Analyze Her FD History';
+    btn.textContent = 'Analyze Her FD History';
     btn.disabled = false;
 }
 
@@ -261,7 +261,7 @@ function renderPatternCard(pattern, insights) {
 
     card.className = `pattern-card ${patternClass}`;
     card.innerHTML = `
-        <div class="pattern-title">🏦 ${pattern.replace(/_/g, ' ')}</div>
+        <div class="pattern-title">${pattern.replace(/_/g, ' ')}</div>
         <div class="pattern-narrative">${narrative}</div>
     `;
 }
@@ -312,11 +312,11 @@ function renderDepositTimeline() {
 
 function renderProducts(products) {
     const grid = document.getElementById('productsGrid');
-    const icons = { 'Secured': '🏦', 'Credit Line': '📱', 'Unsecured': '💳' };
+    const icons = { 'Secured': 'S', 'Credit Line': 'C', 'Unsecured': 'U' };
 
     grid.innerHTML = products.map(p => `
         <div class="product-card">
-            <div class="product-icon">${icons[p.type] || '💰'}</div>
+            <div class="product-icon">${icons[p.type] || 'P'}</div>
             <div class="product-name">${p.name}</div>
             <div class="product-type">${p.type}</div>
             <div class="product-details">

@@ -357,8 +357,6 @@ function formatLakhs(amount) {
 function showView(viewId) {
     if (viewId === 'scoreReveal') {
         resetScoreReveal();
-    } else if (viewId === 'formWizard') {
-        resetFormWizard();
     } else if (viewId === 'loading') {
         resetLoading();
     }

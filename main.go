@@ -21,7 +21,10 @@ func main() {
 	fs := http.Dir(wd + "/web")
 	mux.Handle("/", http.FileServer(fs))
 
-	port := "8080"
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
 	fmt.Printf("FD Credit Score running on :%s\n", port)
 	log.Fatal(http.ListenAndServe(":"+port, mux))
 }

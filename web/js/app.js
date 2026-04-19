@@ -67,7 +67,13 @@ async function loadPersonas() {
 
 function renderPersonas() {
     const grid = document.getElementById('personasGrid');
-    const avatars = ['👩‍🏫', '👨‍💻', '🧑‍🔧', '👩‍🎨', '👵'];
+    const avatars = [
+        '<svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="38" fill="#e8c4a0"/><circle cx="40" cy="32" r="18" fill="#2d1f14"/><path d="M22 60 Q40 75 58 60" fill="#2d1f14"/><circle cx="32" cy="38" r="2" fill="#2d1f14"/><circle cx="48" cy="38" r="2" fill="#2d1f14"/><path d="M35 45 Q40 48 45 45" fill="none" stroke="#2d1f14" stroke-width="1.5"/></svg>',
+        '<svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="38" fill="#d4a574"/><circle cx="40" cy="32" r="18" fill="#1a1a1a"/><path d="M22 60 Q40 75 58 60" fill="#1a1a1a"/><rect x="30" y="30" width="20" height="8" fill="#2563eb" rx="4"/></svg>',
+        '<svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="38" fill="#c9a067"/><circle cx="40" cy="32" r="18" fill="#3d2b1f"/><path d="M22 60 Q40 75 58 60" fill="#3d2b1f"/><circle cx="32" cy="38" r="2" fill="#3d2b1f"/><circle cx="48" cy="38" r="2" fill="#3d2b1f"/><path d="M35 44 Q40 47 45 44" fill="none" stroke="#3d2b1f" stroke-width="1.5"/></svg>',
+        '<svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="38" fill="#e8c4a0"/><circle cx="40" cy="30" r="18" fill="#4a3728"/><path d="M22 58 Q40 72 58 58" fill="#4a3728"/><circle cx="32" cy="36" r="2" fill="#4a3728"/><circle cx="48" cy="36" r="2" fill="#4a3728"/><path d="M35 42 Q40 45 45 42" fill="none" stroke="#4a3728" stroke-width="1.5"/></svg>',
+        '<svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="38" fill="#d4a574"/><circle cx="40" cy="34" r="18" fill="#8b7355"/><path d="M22 62 Q40 75 58 62" fill="#8b7355"/><circle cx="32" cy="40" r="2" fill="#8b7355"/><circle cx="48" cy="40" r="2" fill="#8b7355"/><path d="M35 46 Q40 49 45 46" fill="none" stroke="#8b7355" stroke-width="1.5"/></svg>'
+    ];
     
     grid.innerHTML = personas.map((p, i) => `
         <div class="persona-card" onclick="showProfile('${p.id}')">
@@ -96,10 +102,10 @@ function showProfile(personaId) {
     const persona = personas.find(p => p.id === personaId);
     if (!persona) return;
 
-    const avatars = { priya: '👩‍🏫', vikram: '👨‍💻', ramesh: '🧑‍🔧', anita: '👩‍🎨', sunita: '👵' };
+    const avatarMap = { priya: 0, vikram: 1, ramesh: 2, anita: 3, sunita: 4 };
     const story = personaStories[personaId];
 
-    document.getElementById('profileAvatar').textContent = avatars[personaId];
+    document.getElementById('profileAvatar').innerHTML = avatars[avatarMap[personaId]];
     document.getElementById('profileName').textContent = persona.name;
     document.getElementById('profileMeta').textContent = `${persona.occupation} • ${persona.age} • ${persona.city}`;
 

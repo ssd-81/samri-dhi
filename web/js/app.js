@@ -176,7 +176,7 @@ async function analyzePersona() {
         console.error('Failed to get score:', error);
     }
 
-    btn.textContent = 'Analyze Her FD History';
+    btn.textContent = 'Analyze FD History';
     btn.disabled = false;
 }
 
@@ -357,8 +357,6 @@ function showView(viewId) {
         resetScoreReveal();
     } else if (viewId === 'formWizard') {
         resetFormWizard();
-    } else if (viewId === 'profile') {
-        resetProfilePage();
     } else if (viewId === 'loading') {
         resetLoading();
     }
@@ -429,7 +427,7 @@ function resetProfilePage() {
     document.getElementById('profileStory').innerHTML = '';
     const btn = document.querySelector('.btn-analyze');
     if (btn) {
-        btn.textContent = 'Analyze Her FD History';
+        btn.textContent = 'Analyze FD History';
         btn.disabled = false;
     }
 }

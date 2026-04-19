@@ -5,6 +5,7 @@ let customDeposits = [];
 let wizardStep = 1;
 let radarChart = null;
 let timelineChart = null;
+let lastScrollPosition = 0;
 
 const avatars = [
     '<svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="38" fill="#e8c4a0"/><circle cx="40" cy="32" r="18" fill="#2d1f14"/><path d="M22 60 Q40 75 58 60" fill="#2d1f14"/><circle cx="32" cy="38" r="2" fill="#2d1f14"/><circle cx="48" cy="38" r="2" fill="#2d1f14"/><path d="M35 45 Q40 48 45 45" fill="none" stroke="#2d1f14" stroke-width="1.5"/></svg>',
@@ -99,6 +100,7 @@ function getYearsActive(deposits) {
 }
 
 function showProfile(personaId) {
+    lastScrollPosition = window.scrollY;
     currentPersonaId = personaId;
     const persona = personas.find(p => p.id === personaId);
     if (!persona) return;
@@ -369,10 +371,13 @@ function showView(viewId) {
     view.classList.remove('hidden');
     view.classList.add('active');
     
-    window.scrollTo(0, 0);
-    
     if (viewId === 'landing') {
         renderPersonas();
+        if (lastScrollPosition > 0) {
+            setTimeout(() => window.scrollTo(0, lastScrollPosition), 50);
+        }
+    } else if (viewId === 'profile') {
+        window.scrollTo(0, 0);
     }
 }
 

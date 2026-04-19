@@ -1112,6 +1112,14 @@ body::before {
     transition: width 0.3s ease;
 }
 
+.wizard-step-content {
+    display: block;
+}
+
+.wizard-step-content.hidden {
+    display: none;
+}
+
 .wizard-step-content h2 {
     font-size: 24px;
     margin-bottom: 24px;

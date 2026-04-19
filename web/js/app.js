@@ -373,12 +373,14 @@ function showView(viewId) {
         renderPersonas();
         if (lastScrollPosition > 0) {
             setTimeout(() => window.scrollTo(0, lastScrollPosition), 50);
+        } else {
+            window.scrollTo(0, 0);
         }
     } else if (viewId === 'profile') {
         window.scrollTo(0, 0);
+    } else if (viewId === 'formWizard') {
+        window.scrollTo(0, 0);
     }
-    
-    window.scrollTo(0, 0);
 }
 
 function resetScoreReveal() {

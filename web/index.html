@@ -332,50 +332,136 @@
 
             <!-- ABOUT PAGE -->
             <section id="about" class="view hidden">
-                <div class="about-container scroll-reveal">
+                <div class="about-container">
                     <h1 class="about-title">The Problem We Solve</h1>
                     
-                    <div class="about-section">
-                        <h2>The Credit Gap</h2>
-                        <p>500 million Indians save diligently through Fixed Deposits, yet traditional credit scoring systems ignore this completely. These savers have exemplary financial discipline but remain "credit invisible" to lenders.</p>
+                    <!-- Problem Statement -->
+                    <div class="about-hero scroll-reveal">
+                        <div class="hero-stat-box">
+                            <span class="hero-stat-number">500M+</span>
+                            <span class="hero-stat-desc">Indians save in FDs</span>
+                        </div>
+                        <div class="hero-arrow">→</div>
+                        <div class="hero-stat-box highlight">
+                            <span class="hero-stat-number">0</span>
+                            <span class="hero-stat-desc">Credit Score</span>
+                        </div>
                     </div>
 
-                    <div class="about-section">
-                        <h2>Why FD Holders Are Invisible</h2>
-                        <ul class="about-list">
-                            <li>Traditional scores only measure debt repayment history</li>
-                            <li>No credit card or loan history = No score</li>
-                            <li>Saving behavior is never quantified</li>
-                            <li>FD holdings are not considered as collateral</li>
-                        </ul>
+                    <p class="about-intro">500 million Indians save diligently through Fixed Deposits. Yet traditional credit scoring systems ignore this completely. These savers have exemplary financial discipline but remain "credit invisible" to lenders.</p>
+
+                    <!-- Current System Diagram -->
+                    <div class="about-section scroll-reveal">
+                        <h2 class="section-heading">Current System</h2>
+                        <div class="flow-diagram">
+                            <div class="flow-box">
+                                <span class="flow-icon">💳</span>
+                                <span class="flow-text">Credit Card</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-box">
+                                <span class="flow-icon">🏦</span>
+                                <span class="flow-text">Loan History</span>
+                            </div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-box">
+                                <span class="flow-icon">📊</span>
+                                <span class="flow-text">CIBIL Score</span>
+                            </div>
+                            <div class="flow-cross">✕</div>
+                        </div>
+                        <p class="flow-note">FD savings are completely ignored in this calculation</p>
                     </div>
 
-                    <div class="about-section">
-                        <h2>The Solution: Samridhi</h2>
-                        <p>We measure what matters — savings discipline. Our scoring engine evaluates:</p>
-                        <ul class="about-list">
-                            <li>Consistency — How regularly do you create FDs?</li>
-                            <li>Maturity Discipline — Do you hold FDs to completion?</li>
-                            <li>Growth Trajectory — Is your deposit corpus growing?</li>
-                            <li>Diversification — Do you spread across banks?</li>
-                            <li>Tenure Intelligence — Do you optimize for rates?</li>
-                        </ul>
+                    <!-- The Gap -->
+                    <div class="about-section scroll-reveal">
+                        <h2 class="section-heading">The Credit Gap</h2>
+                        <div class="gap-visual">
+                            <div class="gap-left">
+                                <div class="gap-bar">
+                                    <div class="gap-fill full" style="width: 100%">
+                                        <span>FD Holders</span>
+                                        <strong>500M</strong>
+                                    </div>
+                                </div>
+                                <p>Excellent savers</p>
+                            </div>
+                            <div class="gap-right">
+                                <div class="gap-bar">
+                                    <div class="gap-fill empty" style="width: 100%">
+                                        <span>With Credit Score</span>
+                                        <strong>~50M</strong>
+                                    </div>
+                                </div>
+                                <p>Only 10% have scores</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="about-section">
-                        <h2>The Impact</h2>
-                        <p>With Samridhi, savers finally have a credit identity based on their actual financial behavior. A disciplined FD creator now qualifies for:</p>
-                        <ul class="about-list">
-                            <li>FD-backed credit cards</li>
-                            <li>Loans against FD holdings</li>
-                            <li>UPI credit lines</li>
-                            <li>Personal loans at better rates</li>
-                        </ul>
+                    <!-- Samridhi Solution -->
+                    <div class="about-section scroll-reveal">
+                        <h2 class="section-heading">Samridhi Solution</h2>
+                        <div class="solution-grid">
+                            <div class="solution-card">
+                                <div class="solution-icon">📈</div>
+                                <h3>Consistency</h3>
+                                <p>How regularly you create FDs</p>
+                            </div>
+                            <div class="solution-card">
+                                <div class="solution-icon">🎯</div>
+                                <h3>Discipline</h3>
+                                <p>Hold FDs to maturity</p>
+                            </div>
+                            <div class="solution-card">
+                                <div class="solution-icon">📊</div>
+                                <h3>Growth</h3>
+                                <p>Year-over-year increase</p>
+                            </div>
+                            <div class="solution-card">
+                                <div class="solution-icon">🏦</div>
+                                <h3>Diversification</h3>
+                                <p>Spread across banks</p>
+                            </div>
+                            <div class="solution-card">
+                                <div class="solution-icon">🧠</div>
+                                <h3>Intelligence</h3>
+                                <p>Rate optimization</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="about-section">
-                        <h2>Our Vision</h2>
-                        <p>Every disciplined saver deserves access to credit. Samridhi transforms passive savings into active credit potential, creating a flywheel where better savings → better credit → better financial health → more savings.</p>
+                    <!-- Flywheel -->
+                    <div class="about-section scroll-reveal">
+                        <h2 class="section-heading">The Samridhi Flywheel</h2>
+                        <div class="flywheel-visual">
+                            <div class="flywheel-center">
+                                <span class="fw-title">Samridhi</span>
+                                <span class="fw-subtitle">Score</span>
+                            </div>
+                            <div class="flywheel-step step-1">
+                                <span class="fw-icon">💰</span>
+                                <span class="fw-text">Save in FD</span>
+                            </div>
+                            <div class="flywheel-step step-2">
+                                <span class="fw-icon">📊</span>
+                                <span class="fw-text">Build Score</span>
+                            </div>
+                            <div class="flywheel-step step-3">
+                                <span class="fw-icon">💳</span>
+                                <span class="fw-text">Get Credit</span>
+                            </div>
+                            <div class="flywheel-step step-4">
+                                <span class="fw-icon">📈</span>
+                                <span class="fw-text">Prosper</span>
+                            </div>
+                            <div class="flywheel-ring"></div>
+                        </div>
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="about-cta scroll-reveal">
+                        <p>Ready to discover your FD Credit Score?</p>
+                        <button class="btn btn-primary" onclick="showView('landing')">Try It Now →</button>
                     </div>
                 </div>
             </section>

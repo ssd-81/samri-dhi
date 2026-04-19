@@ -67,8 +67,24 @@ func GetPersonaScore(w http.ResponseWriter, r *http.Request) {
 	}
 
 	result := scoring.CalculateScore(history)
+	summary := scoring.ComputePersonaSummary(history, persona.Name, persona.Age, persona.Occupation, persona.City)
+
+	response := map[string]interface{}{
+		"persona":      summary,
+		"total_score":  result.TotalScore,
+		"score_band":   result.ScoreBand,
+		"projected_score": result.ProjectedScore,
+		"cibil_equivalent": result.CIBILEquivalent,
+		"components":   result.Components,
+		"credit_products": result.CreditProducts,
+		"improvements": result.Improvements,
+		"insights":     result.Insights,
+		"pattern_detected": result.PatternDetected,
+		"peer_percentile": result.PeerPercentile,
+	}
+
 	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(result)
+	json.NewEncoder(w).Encode(response)
 }
 
 func GetHealth(w http.ResponseWriter, r *http.Request) {

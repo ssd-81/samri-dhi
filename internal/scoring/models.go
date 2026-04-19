@@ -27,12 +27,25 @@ type Deposit struct {
 type ScoreResult struct {
 	TotalScore      int              `json:"total_score"`
 	ScoreBand       string           `json:"score_band"`
+	ProjectedScore  int              `json:"projected_score"`
+	CIBILEquivalent string           `json:"cibil_equivalent"`
 	Components      []ComponentScore `json:"components"`
 	CreditProducts  []CreditProduct  `json:"credit_products"`
 	Improvements    []Improvement    `json:"improvements"`
 	Insights        []string         `json:"insights"`
 	PatternDetected string           `json:"pattern_detected"`
 	PeerPercentile  int              `json:"peer_percentile"`
+}
+
+type PersonaSummary struct {
+	Name           string `json:"name"`
+	Age            int    `json:"age"`
+	Occupation     string `json:"occupation"`
+	City           string `json:"city"`
+	DepositCount   int    `json:"deposit_count"`
+	TotalCorpus    float64 `json:"total_corpus"`
+	YearsActive    int    `json:"years_active"`
+	ActiveDeposits int    `json:"active_deposits"`
 }
 
 type ComponentScore struct {

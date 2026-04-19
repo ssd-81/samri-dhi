@@ -1,6 +1,7 @@
 package scoring
 
 import (
+	"fmt"
 	"sort"
 )
 
@@ -24,10 +25,14 @@ func CalculateScore(history DepositHistory) ScoreResult {
 	improvements := suggestImprovements(components, history)
 	insights := generateInsights(components, pattern)
 	percentile := calculatePercentile(mappedScore)
+	cibilEquiv := getCIBILEquivalent(mappedScore)
+	projectedScore := calculateProjectedScore(mappedScore, improvements)
 
 	return ScoreResult{
 		TotalScore:      mappedScore,
 		ScoreBand:       getScoreBand(mappedScore),
+		ProjectedScore:  projectedScore,
+		CIBILEquivalent: cibilEquiv,
 		Components:      components,
 		CreditProducts:  products,
 		Improvements:    improvements,
@@ -316,6 +321,80 @@ func generateInsights(components []ComponentScore, pattern string) []string {
 	}
 
 	return insights
+}
+
+func getCIBILEquivalent(score int) string {
+	switch {
+	case score >= 750:
+		return "750-900"
+	case score >= 700:
+		return "700-749"
+	case score >= 650:
+		return "650-699"
+	case score >= 600:
+		return "600-649"
+	case score >= 550:
+		return "550-599"
+	case score >= 500:
+		return "500-549"
+	default:
+		return "Below 500"
+	}
+}
+
+func calculateProjectedScore(currentScore int, improvements []Improvement) int {
+	projected := currentScore
+	for i := 0; i < len(improvements) && i < 3; i++ {
+		projected += improvements[i].PointsDelta
+	}
+	if projected > 900 {
+		projected = 900
+	}
+	return projected
+}
+
+func ComputePersonaSummary(history DepositHistory, name string, age int, occupation string, city string) PersonaSummary {
+	summary := PersonaSummary{
+		Name:       name,
+		Age:        age,
+		Occupation: occupation,
+		City:       city,
+	}
+
+	summary.DepositCount = len(history.Deposits)
+
+	var totalCorpus float64
+	activeCount := 0
+	years := make(map[int]bool)
+
+	for _, d := range history.Deposits {
+		totalCorpus += d.Amount
+		if d.Status == "active" {
+			activeCount++
+		}
+		if len(d.StartDate) >= 4 {
+			if y := d.StartDate[:4]; y >= "2010" && y <= "2030" {
+				if year, err := parseYear(y); err == nil {
+					years[year] = true
+				}
+			}
+		}
+	}
+
+	summary.TotalCorpus = totalCorpus
+	summary.ActiveDeposits = activeCount
+	summary.YearsActive = len(years)
+	if summary.YearsActive == 0 {
+		summary.YearsActive = 1
+	}
+
+	return summary
+}
+
+func parseYear(s string) (int, error) {
+	var year int
+	_, err := fmt.Sscanf(s, "%d", &year)
+	return year, err
 }
 
 var _ = sort.Ints

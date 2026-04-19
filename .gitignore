@@ -1,0 +1,25 @@
+# Dependencies
+/vendor/
+
+# Binary
+fd-credit-score
+*.exe
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific (development docs)
+DEV_GUIDE.md
+phase2.md
+samridhi.md
+
+# Build output
+*.test
+coverage.txt

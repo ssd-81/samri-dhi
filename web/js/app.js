@@ -463,6 +463,11 @@ function scrollToSection(sectionId) {
     document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
 }
 
+function resetAndGoToStep1() {
+    resetFormWizard();
+    showView('formWizard');
+}
+
 // Wizard functions
 document.getElementById('depositStatus').addEventListener('change', function() {
     document.getElementById('withdrawnDateGroup').classList.toggle('hidden', this.value !== 'withdrawn');

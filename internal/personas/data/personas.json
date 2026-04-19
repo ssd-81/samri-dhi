@@ -1,0 +1,115 @@
+{
+  "personas": [
+    {
+      "id": "priya",
+      "name": "Priya Sharma",
+      "age": 38,
+      "occupation": "Teacher",
+      "city": "Jaipur",
+      "deposits": [
+        {"id": "p1", "type": "FD", "bank": "SBI", "amount": 100000, "tenure_months": 12, "interest_rate": 6.5, "start_date": "2016-04-01", "maturity_date": "2017-04-01", "status": "matured", "withdrawn_date": null},
+        {"id": "p2", "type": "FD", "bank": "SBI", "amount": 110000, "tenure_months": 12, "interest_rate": 6.8, "start_date": "2017-04-01", "maturity_date": "2018-04-01", "status": "matured", "withdrawn_date": null},
+        {"id": "p3", "type": "FD", "bank": "SBI", "amount": 120000, "tenure_months": 12, "interest_rate": 7.0, "start_date": "2018-04-01", "maturity_date": "2019-04-01", "status": "matured", "withdrawn_date": null},
+        {"id": "p4", "type": "FD", "bank": "SBI", "amount": 130000, "tenure_months": 12, "interest_rate": 6.5, "start_date": "2019-04-01", "maturity_date": "2020-04-01", "status": "matured", "withdrawn_date": null},
+        {"id": "p5", "type": "FD", "bank": "SBI", "amount": 140000, "tenure_months": 12, "interest_rate": 5.5, "start_date": "2020-04-01", "maturity_date": "2021-04-01", "status": "matured", "withdrawn_date": null},
+        {"id": "p6", "type": "FD", "bank": "SBI", "amount": 150000, "tenure_months": 12, "interest_rate": 5.5, "start_date": "2021-04-01", "maturity_date": "2022-04-01", "status": "matured", "withdrawn_date": null},
+        {"id": "p7", "type": "FD", "bank": "SBI", "amount": 160000, "tenure_months": 12, "interest_rate": 6.0, "start_date": "2022-04-01", "maturity_date": "2023-04-01", "status": "matured", "withdrawn_date": null},
+        {"id": "p8", "type": "FD", "bank": "SBI", "amount": 180000, "tenure_months": 12, "interest_rate": 6.8, "start_date": "2023-04-01", "maturity_date": "2024-04-01", "status": "matured", "withdrawn_date": null},
+        {"id": "p9", "type": "FD", "bank": "SBI", "amount": 200000, "tenure_months": 12, "interest_rate": 7.0, "start_date": "2024-04-01", "maturity_date": "2025-04-01", "status": "active", "withdrawn_date": null},
+        {"id": "p10", "type": "FD", "bank": "SBI", "amount": 150000, "tenure_months": 60, "interest_rate": 7.2, "start_date": "2019-04-01", "maturity_date": "2024-04-01", "status": "matured", "withdrawn_date": null},
+        {"id": "p11", "type": "FD", "bank": "SBI", "amount": 200000, "tenure_months": 60, "interest_rate": 7.0, "start_date": "2021-04-01", "maturity_date": "2026-04-01", "status": "active", "withdrawn_date": null}
+      ]
+    },
+    {
+      "id": "vikram",
+      "name": "Vikram Mehta",
+      "age": 32,
+      "occupation": "Software Engineer",
+      "city": "Bangalore",
+      "deposits": [
+        {"id": "v1", "type": "FD", "bank": "HDFC", "amount": 50000, "tenure_months": 12, "interest_rate": 7.0, "start_date": "2019-01-15", "maturity_date": "2020-01-15", "status": "matured", "withdrawn_date": null},
+        {"id": "v2", "type": "FD", "bank": "Axis", "amount": 75000, "tenure_months": 24, "interest_rate": 7.2, "start_date": "2019-06-01", "maturity_date": "2021-06-01", "status": "matured", "withdrawn_date": null},
+        {"id": "v3", "type": "FD", "bank": "IndusInd", "amount": 100000, "tenure_months": 12, "interest_rate": 7.5, "start_date": "2020-01-01", "maturity_date": "2021-01-01", "status": "matured", "withdrawn_date": null},
+        {"id": "v4", "type": "RD", "bank": "ICICI", "amount": 5000, "tenure_months": 24, "interest_rate": 6.5, "start_date": "2020-01-01", "maturity_date": "2022-01-01", "status": "matured", "rd_installment": 5000, "rd_paid_months": 24, "rd_missed_months": 0},
+        {"id": "v5", "type": "FD", "bank": "Kotak", "amount": 150000, "tenure_months": 12, "interest_rate": 7.0, "start_date": "2021-01-01", "maturity_date": "2022-01-01", "status": "matured", "withdrawn_date": null},
+        {"id": "v6", "type": "FD", "bank": "RBL", "amount": 125000, "tenure_months": 18, "interest_rate": 7.5, "start_date": "2021-06-01", "maturity_date": "2022-12-01", "status": "matured", "withdrawn_date": null},
+        {"id": "v7", "type": "FD", "bank": "Yes", "amount": 200000, "tenure_months": 12, "interest_rate": 7.0, "start_date": "2022-01-01", "maturity_date": "2023-01-01", "status": "matured", "withdrawn_date": null},
+        {"id": "v8", "type": "RD", "bank": "HDFC", "amount": 10000, "tenure_months": 24, "interest_rate": 7.0, "start_date": "2022-01-01", "maturity_date": "2024-01-01", "status": "matured", "rd_installment": 10000, "rd_paid_months": 24, "rd_missed_months": 0},
+        {"id": "v9", "type": "FD", "bank": "Bandhan", "amount": 250000, "tenure_months": 12, "interest_rate": 7.5, "start_date": "2023-01-01", "maturity_date": "2024-01-01", "status": "matured", "withdrawn_date": null},
+        {"id": "v10", "type": "FD", "bank": "SBI", "amount": 300000, "tenure_months": 24, "interest_rate": 7.2, "start_date": "2023-06-01", "maturity_date": "2025-06-01", "status": "active", "withdrawn_date": null},
+        {"id": "v11", "type": "FD", "bank": "ICICI", "amount": 200000, "tenure_months": 12, "interest_rate": 7.0, "start_date": "2024-01-01", "maturity_date": "2025-01-01", "status": "active", "withdrawn_date": null},
+        {"id": "v12", "type": "FD", "bank": "Axis", "amount": 350000, "tenure_months": 12, "interest_rate": 7.2, "start_date": "2024-07-01", "maturity_date": "2025-07-01", "status": "active", "withdrawn_date": null},
+        {"id": "v13", "type": "FD", "bank": "Kotak", "amount": 150000, "tenure_months": 60, "interest_rate": 7.5, "start_date": "2020-01-01", "maturity_date": "2025-01-01", "status": "active", "withdrawn_date": null},
+        {"id": "v14", "type": "FD", "bank": "IndusInd", "amount": 200000, "tenure_months": 60, "interest_rate": 7.8, "start_date": "2022-01-01", "maturity_date": "2027-01-01", "status": "active", "withdrawn_date": null},
+        {"id": "v15", "type": "FD", "bank": "HDFC", "amount": 400000, "tenure_months": 12, "interest_rate": 7.0, "start_date": "2025-01-01", "maturity_date": "2026-01-01", "status": "active", "withdrawn_date": null}
+      ]
+    },
+    {
+      "id": "ramesh",
+      "name": "Ramesh Kumar",
+      "age": 45,
+      "occupation": "Shop Owner",
+      "city": "Delhi",
+      "deposits": [
+        {"id": "r1", "type": "FD", "bank": "BoB", "amount": 50000, "tenure_months": 12, "interest_rate": 6.5, "start_date": "2017-04-01", "maturity_date": "2018-04-01", "status": "matured", "withdrawn_date": null},
+        {"id": "r2", "type": "FD", "bank": "BoB", "amount": 75000, "tenure_months": 12, "interest_rate": 6.8, "start_date": "2018-04-01", "maturity_date": "2019-04-01", "status": "matured", "withdrawn_date": null},
+        {"id": "r3", "type": "FD", "bank": "BoB", "amount": 100000, "tenure_months": 12, "interest_rate": 7.0, "start_date": "2019-04-01", "maturity_date": "2020-04-01", "status": "matured", "withdrawn_date": null},
+        {"id": "r4", "type": "FD", "bank": "Canara", "amount": 80000, "tenure_months": 12, "interest_rate": 6.0, "start_date": "2020-03-15", "maturity_date": "2021-03-15", "status": "matured", "withdrawn_date": "2020-06-15"},
+        {"id": "r5", "type": "FD", "bank": "PNB", "amount": 60000, "tenure_months": 12, "interest_rate": 5.5, "start_date": "2020-07-01", "maturity_date": "2021-07-01", "status": "matured", "withdrawn_date": "2020-10-01"},
+        {"id": "r6", "type": "FD", "bank": "IDBI", "amount": 70000, "tenure_months": 12, "interest_rate": 5.5, "start_date": "2021-01-01", "maturity_date": "2022-01-01", "status": "matured", "withdrawn_date": null},
+        {"id": "r7", "type": "FD", "bank": "Canara", "amount": 90000, "tenure_months": 12, "interest_rate": 6.0, "start_date": "2022-01-01", "maturity_date": "2023-01-01", "status": "matured", "withdrawn_date": null},
+        {"id": "r8", "type": "FD", "bank": "BoB", "amount": 120000, "tenure_months": 12, "interest_rate": 6.5, "start_date": "2023-01-01", "maturity_date": "2024-01-01", "status": "matured", "withdrawn_date": null},
+        {"id": "r9", "type": "FD", "bank": "Indian", "amount": 150000, "tenure_months": 12, "interest_rate": 6.8, "start_date": "2024-01-01", "maturity_date": "2025-01-01", "status": "active", "withdrawn_date": null},
+        {"id": "r10", "type": "FD", "bank": "Canara", "amount": 100000, "tenure_months": 12, "interest_rate": 6.5, "start_date": "2024-07-01", "maturity_date": "2025-07-01", "status": "active", "withdrawn_date": null},
+        {"id": "r11", "type": "RD", "bank": "BoB", "amount": 3000, "tenure_months": 24, "interest_rate": 6.0, "start_date": "2022-01-01", "maturity_date": "2024-01-01", "status": "matured", "rd_installment": 3000, "rd_paid_months": 20, "rd_missed_months": 4},
+        {"id": "r12", "type": "FD", "bank": "PNB", "amount": 80000, "tenure_months": 60, "interest_rate": 6.5, "start_date": "2019-01-01", "maturity_date": "2024-01-01", "status": "matured", "withdrawn_date": null}
+      ]
+    },
+    {
+      "id": "anita",
+      "name": "Anita Desai",
+      "age": 29,
+      "occupation": "Freelance Designer",
+      "city": "Mumbai",
+      "deposits": [
+        {"id": "a1", "type": "FD", "bank": "HDFC", "amount": 30000, "tenure_months": 12, "interest_rate": 7.0, "start_date": "2020-04-01", "maturity_date": "2021-04-01", "status": "matured", "withdrawn_date": null},
+        {"id": "a2", "type": "RD", "bank": "ICICI", "amount": 2000, "tenure_months": 12, "interest_rate": 6.5, "start_date": "2020-04-01", "maturity_date": "2021-04-01", "status": "matured", "rd_installment": 2000, "rd_paid_months": 10, "rd_missed_months": 2},
+        {"id": "a3", "type": "FD", "bank": "Axis", "amount": 35000, "tenure_months": 12, "interest_rate": 7.2, "start_date": "2021-05-01", "maturity_date": "2022-05-01", "status": "matured", "withdrawn_date": "2021-11-01"},
+        {"id": "a4", "type": "FD", "bank": "Kotak", "amount": 40000, "tenure_months": 12, "interest_rate": 7.0, "start_date": "2022-01-01", "maturity_date": "2023-01-01", "status": "matured", "withdrawn_date": null},
+        {"id": "a5", "type": "FD", "bank": "IndusInd", "amount": 25000, "tenure_months": 6, "interest_rate": 6.5, "start_date": "2022-06-01", "maturity_date": "2022-12-01", "status": "matured", "withdrawn_date": "2022-09-01"},
+        {"id": "a6", "type": "RD", "bank": "HDFC", "amount": 3000, "tenure_months": 24, "interest_rate": 7.0, "start_date": "2022-01-01", "maturity_date": "2024-01-01", "status": "matured", "rd_installment": 3000, "rd_paid_months": 18, "rd_missed_months": 6},
+        {"id": "a7", "type": "FD", "bank": "Yes", "amount": 50000, "tenure_months": 12, "interest_rate": 7.0, "start_date": "2023-01-01", "maturity_date": "2024-01-01", "status": "matured", "withdrawn_date": null},
+        {"id": "a8", "type": "FD", "bank": "RBL", "amount": 45000, "tenure_months": 12, "interest_rate": 7.5, "start_date": "2024-01-01", "maturity_date": "2025-01-01", "status": "active", "withdrawn_date": null},
+        {"id": "a9", "type": "FD", "bank": "Bandhan", "amount": 60000, "tenure_months": 12, "interest_rate": 7.5, "start_date": "2024-07-01", "maturity_date": "2025-07-01", "status": "active", "withdrawn_date": null},
+        {"id": "a10", "type": "RD", "bank": "Axis", "amount": 4000, "tenure_months": 12, "interest_rate": 7.2, "start_date": "2024-01-01", "maturity_date": "2025-01-01", "status": "active", "rd_installment": 4000, "rd_paid_months": 3, "rd_missed_months": 0},
+        {"id": "a11", "type": "FD", "bank": "Kotak", "amount": 35000, "tenure_months": 60, "interest_rate": 7.5, "start_date": "2023-01-01", "maturity_date": "2028-01-01", "status": "active", "withdrawn_date": null}
+      ]
+    },
+    {
+      "id": "sunita",
+      "name": "Sunita Devi",
+      "age": 62,
+      "occupation": "Retiree",
+      "city": "Chennai",
+      "deposits": [
+        {"id": "s1", "type": "FD", "bank": "SBI", "amount": 50000, "tenure_months": 12, "interest_rate": 8.0, "start_date": "2010-04-01", "maturity_date": "2011-04-01", "status": "matured", "withdrawn_date": null},
+        {"id": "s2", "type": "FD", "bank": "SBI", "amount": 55000, "tenure_months": 12, "interest_rate": 8.5, "start_date": "2011-04-01", "maturity_date": "2012-04-01", "status": "matured", "withdrawn_date": null},
+        {"id": "s3", "type": "FD", "bank": "SBI", "amount": 60000, "tenure_months": 12, "interest_rate": 8.5, "start_date": "2012-04-01", "maturity_date": "2013-04-01", "status": "matured", "withdrawn_date": null},
+        {"id": "s4", "type": "FD", "bank": "SBI", "amount": 70000, "tenure_months": 12, "interest_rate": 8.5, "start_date": "2013-04-01", "maturity_date": "2014-04-01", "status": "matured", "withdrawn_date": null},
+        {"id": "s5", "type": "FD", "bank": "SBI", "amount": 80000, "tenure_months": 12, "interest_rate": 8.5, "start_date": "2014-04-01", "maturity_date": "2015-04-01", "status": "matured", "withdrawn_date": null},
+        {"id": "s6", "type": "FD", "bank": "SBI", "amount": 90000, "tenure_months": 12, "interest_rate": 7.5, "start_date": "2015-04-01", "maturity_date": "2016-04-01", "status": "matured", "withdrawn_date": null},
+        {"id": "s7", "type": "FD", "bank": "SBI", "amount": 100000, "tenure_months": 12, "interest_rate": 6.5, "start_date": "2016-04-01", "maturity_date": "2017-04-01", "status": "matured", "withdrawn_date": null},
+        {"id": "s8", "type": "FD", "bank": "SBI", "amount": 110000, "tenure_months": 12, "interest_rate": 6.5, "start_date": "2017-04-01", "maturity_date": "2018-04-01", "status": "matured", "withdrawn_date": null},
+        {"id": "s9", "type": "FD", "bank": "SBI", "amount": 120000, "tenure_months": 12, "interest_rate": 6.5, "start_date": "2018-04-01", "maturity_date": "2019-04-01", "status": "matured", "withdrawn_date": null},
+        {"id": "s10", "type": "FD", "bank": "SBI", "amount": 130000, "tenure_months": 12, "interest_rate": 6.5, "start_date": "2019-04-01", "maturity_date": "2020-04-01", "status": "matured", "withdrawn_date": null},
+        {"id": "s11", "type": "FD", "bank": "SBI", "amount": 140000, "tenure_months": 12, "interest_rate": 5.5, "start_date": "2020-04-01", "maturity_date": "2021-04-01", "status": "matured", "withdrawn_date": null},
+        {"id": "s12", "type": "FD", "bank": "SBI", "amount": 150000, "tenure_months": 12, "interest_rate": 5.5, "start_date": "2021-04-01", "maturity_date": "2022-04-01", "status": "matured", "withdrawn_date": null},
+        {"id": "s13", "type": "FD", "bank": "SBI", "amount": 160000, "tenure_months": 12, "interest_rate": 6.0, "start_date": "2022-04-01", "maturity_date": "2023-04-01", "status": "matured", "withdrawn_date": null},
+        {"id": "s14", "type": "FD", "bank": "SBI", "amount": 180000, "tenure_months": 12, "interest_rate": 6.8, "start_date": "2023-04-01", "maturity_date": "2024-04-01", "status": "matured", "withdrawn_date": null},
+        {"id": "s15", "type": "FD", "bank": "SBI", "amount": 200000, "tenure_months": 12, "interest_rate": 7.0, "start_date": "2024-04-01", "maturity_date": "2025-04-01", "status": "active", "withdrawn_date": null},
+        {"id": "s16", "type": "FD", "bank": "SBI", "amount": 500000, "tenure_months": 60, "interest_rate": 7.2, "start_date": "2018-04-01", "maturity_date": "2023-04-01", "status": "matured", "withdrawn_date": null},
+        {"id": "s17", "type": "FD", "bank": "SBI", "amount": 600000, "tenure_months": 60, "interest_rate": 7.0, "start_date": "2021-04-01", "maturity_date": "2026-04-01", "status": "active", "withdrawn_date": null}
+      ]
+    }
+  ]
+}

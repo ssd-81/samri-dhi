@@ -376,9 +376,9 @@ function showView(viewId) {
         }
     } else if (viewId === 'profile') {
         window.scrollTo(0, 0);
-    } else if (viewId === 'formWizard') {
-        resetFormWizard();
     }
+    
+    window.scrollTo(0, 0);
 }
 
 function resetScoreReveal() {
